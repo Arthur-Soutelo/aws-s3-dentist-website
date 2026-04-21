@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo/logo_webpage.png">
+    <link rel="canonical" href="https://drasarahfsaraujo.com/testimonials.html" />
+    <meta name="keywords"
+        content="depoimentos pacientes Dra. Sarah, avaliações odontologia Belo Horizonte, satisfação clientes dentista">
+    <meta name="description"
+        content="Leia os depoimentos de nossos pacientes satisfeitos com os serviços odontológicos da Dra. Sarah em Belo Horizonte.">
+    <meta name="author" content="Dra. Sarah Araújo">
+    <title>Depoimentos - Consultório Odontológico da Dra. Sarah</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Barra de Navegação -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" style="display: flex; align-items: center;">
+                    <img src="images/logo/logo_webpage.png" alt="Consultório Logo"
+                        style="height: 60px; width: auto; margin-right: 15px;">
+                    <div style="line-height: 1.2;">
+                        <div style="font-weight: normal; font-size: 1.3rem; color: #26546B;">Sarah F S Araujo</div>
+                        <div style="font-size: 0.875rem; color: #2f4f4f;">Cirurgiã Dentista</div>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a data-en="Home" class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a data-en="About" class="nav-link" href="about.html">Sobre</a></li>
+                        <li class="nav-item"><a data-en="Services" class="nav-link" href="services.html">Serviços</a></li>
+                        <li class="nav-item"><a data-en="Testimonials" class="nav-link" href="testimonials.html">Depoimentos</a></li>
+                        <li class="nav-item"><a data-en="Contact" class="nav-link" href="contact.html">Contato</a></li>
+                        <li class="nav-item ms-2">
+                            <div id="lang-toggle" class="lang-toggle" role="group" aria-label="Language selector">
+                                <button type="button" class="lang-option" data-lang="pt"><img src="https://flagcdn.com/w20/br.png" alt="Português"></button>
+                                <button type="button" class="lang-option" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="English"></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-banner py-5">
+        <div class="container text-center">
+            <h1 class="display-4" data-en="Patient Testimonials">Depoimentos de Pacientes</h1>
+            <p class="lead" data-en="What our patients say about our services">O que nossos pacientes dizem sobre nossos serviços</p>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="section-padding">
+        <div class="container">
+            <div id="testimonials-container" class="row">
+                <!-- Testimonials will be loaded here -->
+            </div>
+            <div class="text-center mt-4">
+                <p class="lead mb-0" data-en="These are just some of the many satisfied patients who trust Dr. Sarah's care every day.">Esses são apenas alguns dos muitos pacientes satisfeitos que confiam no cuidado da Dra. Sarah todos os dias.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section text-white py-5">
+        <div class="container text-center">
+            <h2 data-en="Be our next satisfied patient!">Seja o próximo paciente satisfeito!</h2>
+            <p class="lead" data-en="Schedule your appointment and enjoy the same positive experience.">Agende sua consulta e tenha a mesma experiência positiva.</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3" data-en="Get in Touch">Entre em Contato</a>
+            <a href="https://wa.me/553184832230" target="_blank" class="btn btn-outline-light btn-lg">
+                <i class="fab fa-whatsapp me-2"></i><span data-en="Book via WhatsApp">Agendar pelo WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <p data-en="&copy; 2024 Consultório Odontológico da Dra. Sarah. All rights reserved.">&copy; 2024 Consultório Odontológico da Dra. Sarah. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        function loadTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            const isEnglish = localStorage.getItem('language') === 'en';
+
+            testimonialsData.forEach((testimonial) => {
+                const colClass = 'col-md-6 col-lg-4 mb-4';
+                const col = document.createElement('div');
+                col.className = colClass;
+
+                const card = document.createElement('div');
+                card.className = 'card h-100 testimonial-card';
+
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                const starsDiv = document.createElement('div');
+                starsDiv.className = 'text-center mb-3';
+                for (let i = 0; i < testimonial.stars; i++) {
+                    const star = document.createElement('i');
+                    star.className = 'fas fa-star text-warning';
+                    starsDiv.appendChild(star);
+                }
+
+                const text = document.createElement('p');
+                text.className = 'card-text';
+                text.textContent = `"${isEnglish ? testimonial.textEn : testimonial.text}"`;
+
+                const citeDiv = document.createElement('div');
+                citeDiv.className = 'text-center';
+                const cite = document.createElement('cite');
+                cite.textContent = `- ${testimonial.author}`;
+
+                citeDiv.appendChild(cite);
+                cardBody.appendChild(starsDiv);
+                cardBody.appendChild(text);
+                cardBody.appendChild(citeDiv);
+                card.appendChild(cardBody);
+                col.appendChild(card);
+                container.appendChild(col);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTestimonials);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

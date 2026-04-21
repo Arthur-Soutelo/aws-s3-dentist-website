@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="images/logo_webpage.png">
+    <link rel="icon" href="images/logo/logo_webpage.png">
     <link rel="canonical" href="https://drasarahfsaraujo.com/testimonials.html" />
     <meta name="keywords"
         content="depoimentos pacientes Dra. Sarah, avaliações odontologia Belo Horizonte, satisfação clientes dentista">
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="index.html" style="display: flex; align-items: center;">
-                    <img src="images/logo_webpage.png" alt="Consultório Logo"
+                    <img src="images/logo/logo_webpage.png" alt="Consultório Logo"
                         style="height: 60px; width: auto; margin-right: 15px;">
                     <div style="line-height: 1.2;">
                         <div style="font-weight: normal; font-size: 1.3rem; color: #26546B;">Sarah F S Araujo</div>
@@ -67,6 +67,9 @@
             <div id="testimonials-container" class="row">
                 <!-- Testimonials will be loaded here -->
             </div>
+            <div class="text-center mt-4">
+                <p class="lead mb-0" data-en="These are just some of the many satisfied patients who trust Dr. Sarah's care every day.">Esses são apenas alguns dos muitos pacientes satisfeitos que confiam no cuidado da Dra. Sarah todos os dias.</p>
+            </div>
         </div>
     </section>
 
@@ -96,13 +99,13 @@
             const container = document.getElementById('testimonials-container');
             const isEnglish = localStorage.getItem('language') === 'en';
 
-            testimonialsData.forEach((testimonial, index) => {
-                const colClass = index < 3 ? 'col-md-4 mb-4' : 'col-md-6 mb-4';
+            testimonialsData.forEach((testimonial) => {
+                const colClass = 'col-md-6 col-lg-4 mb-4';
                 const col = document.createElement('div');
                 col.className = colClass;
 
                 const card = document.createElement('div');
-                card.className = 'card h-100';
+                card.className = 'card h-100 testimonial-card';
 
                 const cardBody = document.createElement('div');
                 cardBody.className = 'card-body';
@@ -120,7 +123,7 @@
                 text.textContent = `"${isEnglish ? testimonial.textEn : testimonial.text}"`;
 
                 const citeDiv = document.createElement('div');
-                citeDiv.className = 'text-end';
+                citeDiv.className = 'text-center';
                 const cite = document.createElement('cite');
                 cite.textContent = `- ${testimonial.author}`;
 

@@ -218,6 +218,26 @@ body {
     color: #2f4f4f !important;
 }
 
+.testimonial-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 2rem 1.5rem;
+}
+
+.testimonial-card .card-text {
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-card cite {
+    font-style: normal;
+    font-weight: 600;
+    color: #26546B;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .jumbotron h1 {

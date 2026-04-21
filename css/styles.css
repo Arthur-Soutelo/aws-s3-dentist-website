@@ -85,6 +85,7 @@
 .btn-outline-success:hover {
     background-color: #2E8B57 !important;
     border-color: #2E8B57 !important;
+    color: #ffffff !important;
 }
 
 /* Footer Background and Text Color */
@@ -203,6 +204,10 @@ body {
     color: #000000 !important;
 }
 
+.contact-icon {
+    color: #D9A520 !important;
+}
+
 .text-primary {
     color: #2f4f4f !important;
 }
@@ -220,6 +225,11 @@ body {
 /* Service titles */
 .service-title {
     color: #2f4f4f !important;
+}
+
+.service-image {
+    height: 190px;
+    object-fit: cover;
 }
 
 .testimonial-card .card-body {

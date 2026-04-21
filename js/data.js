@@ -2,27 +2,51 @@
 
 const servicesData = [
     {
-        image: 'images/servicos/sorriso_5-4.jpg',
-        title: 'Odontologia Estética',
-        titleEn: 'Aesthetic Dentistry',
-        description: 'Melhore seu sorriso com nossos tratamentos estéticos, como clareamento dental, facetas e lentes de contato dental. Recupere a confiança e a beleza do seu sorriso.',
-        descriptionEn: 'Improve your smile with our aesthetic treatments, such as dental whitening, veneers and dental contact lenses. Regain the confidence and beauty of your smile.',
+        image: 'images/servicos/limpeza.jpg',
+        title: 'Limpeza',
+        titleEn: 'Cleaning',
+        description: 'Remoção de placa e tártaro para manter dentes e gengivas mais saudáveis.',
+        descriptionEn: 'Removal of plaque and tartar to keep teeth and gums healthier.',
         link: 'contact.html'
     },
     {
-        image: 'images/servicos/escova_5-4.jpg',
-        title: 'Cuidados Preventivos',
-        titleEn: 'Preventive Care',
-        description: 'Exames de rotina, limpezas profissionais e orientações para manter seus dentes e gengivas saudáveis. Prevenção é a melhor forma de cuidar da saúde bucal.',
-        descriptionEn: 'Routine exams, professional cleanings and guidance to keep your teeth and gums healthy. Prevention is the best way to take care of your oral health.',
+        image: 'images/servicos/restauracao.jpg',
+        title: 'Restauração',
+        titleEn: 'Restoration',
+        description: 'Recuperação da forma e da função dos dentes com naturalidade e cuidado.',
+        descriptionEn: 'Restoration of tooth shape and function with a natural look and attentive care.',
         link: 'contact.html'
     },
     {
-        image: 'images/servicos/raiox_5-4.jpg',
-        title: 'Tratamentos Restauradores',
-        titleEn: 'Restorative Treatments',
-        description: 'Restaurações, coroas, pontes e outros tratamentos para recuperar a funcionalidade e aparência dos seus dentes. Soluções duradouras e naturais.',
-        descriptionEn: 'Restorations, crowns, bridges and other treatments to recover the functionality and appearance of your teeth. Lasting and natural solutions.',
+        image: 'images/servicos/protese.jpg',
+        title: 'Prótese Fixa',
+        titleEn: 'Fixed Prosthesis',
+        description: 'Solução para devolver estética, conforto e segurança ao sorriso.',
+        descriptionEn: 'A solution to restore aesthetics, comfort and confidence to your smile.',
+        link: 'contact.html'
+    },
+    {
+        image: 'images/servicos/clareamento.jpg',
+        title: 'Clareamento',
+        titleEn: 'Whitening',
+        description: 'Tratamento para deixar o sorriso mais claro com segurança e acompanhamento profissional.',
+        descriptionEn: 'Treatment to brighten your smile safely with professional supervision.',
+        link: 'contact.html'
+    },
+    {
+        image: 'images/servicos/extracao.jpg',
+        title: 'Extração Simples',
+        titleEn: 'Simple Extraction',
+        description: 'Procedimento realizado com técnica, cuidado e foco no seu conforto.',
+        descriptionEn: 'A procedure performed with technique, care and a focus on your comfort.',
+        link: 'contact.html'
+    },
+    {
+        image: 'images/servicos/botox.jpg',
+        title: 'Botox',
+        titleEn: 'Botox',
+        description: 'Aplicação voltada para harmonia facial, suavização de linhas e bem-estar.',
+        descriptionEn: 'Application focused on facial harmony, softening lines and overall well-being.',
         link: 'contact.html'
     }
 ];

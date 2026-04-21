@@ -57,8 +57,9 @@
     <section class="page-banner py-5">
         <div class="container text-center">
             <h1 class="display-4" data-en="Our Services">Nossos Serviços</h1>
-            <p class="lead" data-en="Specialized dental treatments to take care of your smile">Tratamentos odontológicos especializados para cuidar do seu sorriso</p>
-        </div>
+            <p class="lead" data-en="Dental and aesthetic treatments to take care of your smile">
+            Tratamentos odontológicos e estéticos para cuidar do seu sorriso
+            </p>
     </section>
 
     <!-- Seção de Serviços -->
@@ -104,7 +105,7 @@
                 
                 const img = document.createElement('img');
                 img.src = service.image;
-                img.className = 'card-img-top';
+                img.className = 'card-img-top service-image';
                 img.alt = isEnglish ? service.titleEn : service.title;
                 
                 const cardBody = document.createElement('div');

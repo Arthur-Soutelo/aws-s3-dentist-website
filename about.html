@@ -15,6 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .about-icon {
+            color: #D9A520;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,7 +46,12 @@
                         <li class="nav-item"><a data-en="Services" class="nav-link" href="services.html">Serviços</a></li>
                         <li class="nav-item"><a data-en="Testimonials" class="nav-link" href="testimonials.html">Depoimentos</a></li>
                         <li class="nav-item"><a data-en="Contact" class="nav-link" href="contact.html">Contato</a></li>
-                        <li class="nav-item"><button id="lang-toggle" class="btn btn-sm btn-outline-success ms-2 rounded-circle"><i class="fas fa-flag-usa"></i></button></li>
+                        <li class="nav-item ms-2">
+                            <div id="lang-toggle" class="lang-toggle" role="group" aria-label="Language selector">
+                                <button type="button" class="lang-option" data-lang="pt"><img src="https://flagcdn.com/w20/br.png" alt="Português"></button>
+                                <button type="button" class="lang-option" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="English"></button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +59,7 @@
     </header>
 
     <!-- Page Header -->
-    <section class="bg-light py-5">
+    <section class="page-banner py-5">
         <div class="container text-center">
             <h1 data-en="About Dr. Sarah" class="display-4">Sobre a Dra. Sarah</h1>
             <p data-en="Get to know our specialized dentist and her commitment to oral health" class="lead">Conheça nossa dentista especializada e seu compromisso com a saúde bucal</p>
@@ -62,37 +72,25 @@
             <div class="row align-items-center justify-content-center mb-5">
                 <div class="col-md-8 text-center text-md-left">
                     <h2 data-en="Dr. Sarah Araújo">Dra. Sarah Araújo</h2>
-                    <p data-en="Dr. Sarah is a highly qualified and dedicated dentist with years of experience in various areas of dentistry. With a focus on humanized care and the oral health of her patients, Dr. Sarah offers modern and effective treatments to ensure healthy and beautiful smiles." class="text-justify">A Dra. Sarah é uma dentista altamente qualificada e dedicada, com anos de
-                        experiência em diversas áreas da odontologia. Com um enfoque no atendimento humanizado e na
-                        saúde bucal de seus pacientes, Dra. Sarah oferece tratamentos modernos e eficazes para garantir
-                        sorrisos saudáveis e bonitos.</p>
+                    <p data-en="Dr. Sarah is a highly qualified and dedicated dentist with years of experience in various areas of dentistry. Graduated in Dentistry from Universidade Luterana do Brasil (ULBRA) in Canoas, with postgraduate training in specialized areas, she combines humanized care and modern treatments to promote oral health and beautiful smiles." class="text-justify">A Dra. Sarah é uma dentista altamente qualificada e dedicada, com anos de experiência em diversas áreas da odontologia. Formada em Odontologia pela Universidade Luterana do Brasil (ULBRA) de Canoas, com diversos cursos de pós-graduação em áreas especializadas, une atendimento humanizado e tratamentos modernos para promover saúde bucal e sorrisos saudáveis e bonitos.</p>
+                    <p data-en="Originally from Canoas, RS, Dr. Sarah is committed to offering personalized care with technical excellence and a welcoming experience for every patient." class="text-justify">Natural de Canoas, RS, a Dra. Sarah tem como compromisso oferecer um cuidado personalizado, com excelência técnica e uma experiência acolhedora para cada paciente.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="images/drasarah.jpg" class="img-fluid rounded shadow" alt="Dra. Sarah Araújo">
                 </div>
             </div>
 
-            <!-- Cards Section -->
-            <div class="row">
-                <!-- Formação Card (Grande) -->
-                <div class="col-md-12 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <h5 data-en="Academic Background" class="card-title text-primary"><i class="fas fa-graduation-cap me-2"></i>Formação Acadêmica</h5>
-                            <p data-en="Graduated in Dentistry from Universidade Luterana do Brasil (ULBRA) in Canoas." class="card-text">Formada em Odontologia pela Universidade Luterana do Brasil (ULBRA) de Canoas.</p>
-                            <p data-en="Has several postgraduate courses in specialized areas of dentistry." class="card-text">Possui diversos cursos de pós-graduação em áreas especializadas da odontologia.</p>
-                            <p data-en="Origin: Canoas, RS" class="card-text"><strong>Origem:</strong> Canoas, RS</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-4">
+                <h3 data-en="Specializations">Especializações</h3>
+                <p data-en="Areas in which Dr. Sarah offers focused, modern and personalized care.">Áreas em que a Dra. Sarah oferece um atendimento focado, moderno e personalizado.</p>
             </div>
 
-            <!-- Especializações Cards (Pequenos) -->
+            <!-- Especializações Cards -->
             <div class="row">
                 <div class="col-md-3 mb-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="fas fa-tooth text-primary fa-2x mb-3"></i>
+                            <i class="fas fa-tooth about-icon fa-2x mb-3"></i>
                             <h6 data-en="Aesthetic Dentistry" class="card-title">Odontologia Estética</h6>
                             <p data-en="Whitening, veneers and dental lenses." class="card-text small">Clareamento, facetas e lentes de contato dental.</p>
                         </div>
@@ -101,7 +99,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="fas fa-shield-alt text-primary fa-2x mb-3"></i>
+                            <i class="fas fa-shield-alt about-icon fa-2x mb-3"></i>
                             <h6 data-en="Preventive Care" class="card-title">Cuidados Preventivos</h6>
                             <p data-en="Exams and cleanings for oral health." class="card-text small">Exames e limpezas para saúde bucal.</p>
                         </div>
@@ -110,7 +108,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="fas fa-tools text-primary fa-2x mb-3"></i>
+                            <i class="fas fa-tools about-icon fa-2x mb-3"></i>
                             <h6 data-en="Restorative Treatments" class="card-title">Tratamentos Restauradores</h6>
                             <p data-en="Restorations, crowns and bridges." class="card-text small">Restaurações, coroas e pontes.</p>
                         </div>
@@ -119,7 +117,7 @@
                 <div class="col-md-3 mb-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="fas fa-heart text-primary fa-2x mb-3"></i>
+                            <i class="fas fa-heart about-icon fa-2x mb-3"></i>
                             <h6 data-en="Humanized Care" class="card-title">Atendimento Humanizado</h6>
                             <p data-en="Personalized and welcoming care." class="card-text small">Cuidado personalizado e acolhedor.</p>
                         </div>

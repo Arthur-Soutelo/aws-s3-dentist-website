@@ -36,12 +36,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link" href="testimonials.html">Depoimentos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
-                        <li class="nav-item"><button id="lang-toggle" class="btn btn-sm btn-outline-success ms-2 rounded-circle"><i class="fas fa-flag-usa"></i></button></li>
+                        <li class="nav-item"><a data-en="Home" class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a data-en="About" class="nav-link" href="about.html">Sobre</a></li>
+                        <li class="nav-item"><a data-en="Services" class="nav-link" href="services.html">Serviços</a></li>
+                        <li class="nav-item"><a data-en="Testimonials" class="nav-link" href="testimonials.html">Depoimentos</a></li>
+                        <li class="nav-item"><a data-en="Contact" class="nav-link" href="contact.html">Contato</a></li>
+                        <li class="nav-item ms-2">
+                            <div id="lang-toggle" class="lang-toggle" role="group" aria-label="Language selector">
+                                <button type="button" class="lang-option" data-lang="pt"><img src="https://flagcdn.com/w20/br.png" alt="Português"></button>
+                                <button type="button" class="lang-option" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="English"></button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -49,10 +54,10 @@
     </header>
 
     <!-- Page Header -->
-    <section class="bg-light py-5">
+    <section class="page-banner py-5">
         <div class="container text-center">
-            <h1 class="display-4">Depoimentos de Pacientes</h1>
-            <p class="lead">O que nossos pacientes dizem sobre nossos serviços</p>
+            <h1 class="display-4" data-en="Patient Testimonials">Depoimentos de Pacientes</h1>
+            <p class="lead" data-en="What our patients say about our services">O que nossos pacientes dizem sobre nossos serviços</p>
         </div>
     </section>
 
@@ -68,11 +73,11 @@
     <!-- Call to Action -->
     <section class="cta-section text-white py-5">
         <div class="container text-center">
-            <h2>Seja o próximo paciente satisfeito!</h2>
-            <p class="lead">Agende sua consulta e tenha a mesma experiência positiva.</p>
-            <a href="contact.html" class="btn btn-light btn-lg me-3">Entre em Contato</a>
+            <h2 data-en="Be our next satisfied patient!">Seja o próximo paciente satisfeito!</h2>
+            <p class="lead" data-en="Schedule your appointment and enjoy the same positive experience.">Agende sua consulta e tenha a mesma experiência positiva.</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3" data-en="Get in Touch">Entre em Contato</a>
             <a href="https://wa.me/553184832230" target="_blank" class="btn btn-outline-light btn-lg">
-                <i class="fab fa-whatsapp me-2"></i>Agendar pelo WhatsApp
+                <i class="fab fa-whatsapp me-2"></i><span data-en="Book via WhatsApp">Agendar pelo WhatsApp</span>
             </a>
         </div>
     </section>
@@ -80,7 +85,7 @@
     <!-- Rodapé -->
     <footer class="footer text-center py-4">
         <div class="container">
-            <p>&copy; 2024 Consultório Odontológico da Dra. Sarah. Todos os direitos reservados.</p>
+            <p data-en="&copy; 2024 Consultório Odontológico da Dra. Sarah. All rights reserved.">&copy; 2024 Consultório Odontológico da Dra. Sarah. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -90,18 +95,18 @@
         function loadTestimonials() {
             const container = document.getElementById('testimonials-container');
             const isEnglish = localStorage.getItem('language') === 'en';
-            
+
             testimonialsData.forEach((testimonial, index) => {
                 const colClass = index < 3 ? 'col-md-4 mb-4' : 'col-md-6 mb-4';
                 const col = document.createElement('div');
                 col.className = colClass;
-                
+
                 const card = document.createElement('div');
                 card.className = 'card h-100';
-                
+
                 const cardBody = document.createElement('div');
                 cardBody.className = 'card-body';
-                
+
                 const starsDiv = document.createElement('div');
                 starsDiv.className = 'text-center mb-3';
                 for (let i = 0; i < testimonial.stars; i++) {
@@ -109,35 +114,26 @@
                     star.className = 'fas fa-star text-warning';
                     starsDiv.appendChild(star);
                 }
-                
+
                 const text = document.createElement('p');
                 text.className = 'card-text';
                 text.textContent = `"${isEnglish ? testimonial.textEn : testimonial.text}"`;
-                
+
                 const citeDiv = document.createElement('div');
                 citeDiv.className = 'text-end';
                 const cite = document.createElement('cite');
                 cite.textContent = `- ${testimonial.author}`;
+
                 citeDiv.appendChild(cite);
-                
                 cardBody.appendChild(starsDiv);
                 cardBody.appendChild(text);
                 cardBody.appendChild(citeDiv);
-                
                 card.appendChild(cardBody);
                 col.appendChild(card);
-                
-                if (index === 3) {
-                    const row = document.createElement('div');
-                    row.className = 'row mt-4';
-                    container.appendChild(row);
-                    row.appendChild(col);
-                } else {
-                    container.appendChild(col);
-                }
+                container.appendChild(col);
             });
         }
-        
+
         document.addEventListener('DOMContentLoaded', loadTestimonials);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -65,6 +65,35 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentLang = localStorage.getItem('language') || 'pt';
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
+        const langOptions = langToggle.querySelectorAll('.lang-option');
+
+        const setLanguage = (lang) => {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            if (currentLang === 'en') {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.innerHTML = el.dataset.en;
+                });
+                document.querySelectorAll('img[data-en]').forEach(img => {
+                    img.alt = img.dataset.en;
+                });
+            } else {
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.innerHTML = el.dataset.pt;
+                });
+                document.querySelectorAll('img[data-en]').forEach(img => {
+                    img.alt = img.dataset.ptAlt;
+                });
+            }
+        };
+
+        const updateLangToggle = () => {
+            langOptions.forEach(option => {
+                option.classList.toggle('active', option.dataset.lang === currentLang);
+            });
+        };
+
         // Store original text
         document.querySelectorAll('[data-en]').forEach(el => {
             if (!el.dataset.pt) {
@@ -78,45 +107,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Set initial language
-        if (currentLang === 'en') {
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.innerHTML = el.dataset.en;
-            });
-            document.querySelectorAll('img[data-en]').forEach(img => {
-                img.alt = img.dataset.en;
-            });
-        }
+        setLanguage(currentLang);
+        updateLangToggle();
 
-        langToggle.addEventListener('click', function() {
-            if (currentLang === 'pt') {
-                currentLang = 'en';
-                localStorage.setItem('language', 'en');
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    el.innerHTML = el.dataset.en;
-                });
-                document.querySelectorAll('img[data-en]').forEach(img => {
-                    img.alt = img.dataset.en;
-                });
-            } else {
-                currentLang = 'pt';
-                localStorage.setItem('language', 'pt');
-                document.querySelectorAll('[data-en]').forEach(el => {
-                    el.innerHTML = el.dataset.pt;
-                });
-                document.querySelectorAll('img[data-en]').forEach(img => {
-                    img.alt = img.dataset.ptAlt;
-                });
-            }
-            
-            // Reload dynamic content if functions exist
-            if (typeof loadServices === 'function') {
-                document.getElementById('services-container').innerHTML = '';
-                loadServices();
-            }
-            if (typeof loadTestimonials === 'function') {
-                document.getElementById('testimonials-container').innerHTML = '';
-                loadTestimonials();
-            }
+        langOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                if (option.dataset.lang === currentLang) {
+                    return;
+                }
+
+                setLanguage(option.dataset.lang);
+                updateLangToggle();
+                
+                // Reload dynamic content if functions exist
+                if (typeof loadServices === 'function') {
+                    document.getElementById('services-container').innerHTML = '';
+                    loadServices();
+                }
+                if (typeof loadTestimonials === 'function') {
+                    document.getElementById('testimonials-container').innerHTML = '';
+                    loadTestimonials();
+                }
+            });
         });
     }
 });

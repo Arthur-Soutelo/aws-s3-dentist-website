@@ -14,15 +14,51 @@
 /* Navbar Text Color - Navy Blue */
 .navbar-brand,
 .navbar-nav .nav-link {
-    color: #2f4f4f !important;
-    /* Dark slate gray for better contrast */
+    color: #26546B !important;
     transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    border: 1px solid #D9A520;
+    border-radius: 999px;
+    background-color: #ffffff;
+}
+
+.lang-option {
+    border: none;
+    background: transparent;
+    color: #26546B;
+    border-radius: 999px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-option img {
+    display: block;
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+}
+
+.lang-option.active {
+    background-color: #D9A520;
+    color: #ffffff;
 }
 
 .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
-    color: #2E8B57 !important;
-    /* Emerald green for hover effect */
+    color: #D9A520 !important;
 }
 
 /* Button Color Customization */
@@ -138,6 +174,29 @@ body {
 
 .section-padding {
     padding: 80px 0;
+}
+
+.page-banner {
+    background-color: #f8f9fa !important;
+    color: #2f4f4f;
+}
+
+.page-banner .lead,
+.page-banner .display-4,
+.page-banner h1,
+.page-banner h2,
+.page-banner h3,
+.page-banner p {
+    color: #2f4f4f;
+}
+
+.hours-highlight {
+    color: #000000 !important;
+    font-weight: 700;
+}
+
+.banner-note {
+    color: #000000 !important;
 }
 
 .text-primary {

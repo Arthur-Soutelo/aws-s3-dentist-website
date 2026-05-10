@@ -105,6 +105,7 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .text-justify {
@@ -232,6 +233,20 @@ body {
     object-fit: cover;
 }
 
+#services-container .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+#services-container .card-body .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.map-container iframe {
+    display: block;
+}
+
 .testimonial-card .card-body {
     display: flex;
     flex-direction: column;
@@ -254,11 +269,223 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .navbar {
+        padding-top: 0.65rem !important;
+        padding-bottom: 0.65rem !important;
+    }
+
+    .navbar .container {
+        align-items: center;
+    }
+
+    .navbar-brand {
+        max-width: calc(100% - 58px);
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    .navbar-brand img {
+        height: 46px !important;
+        margin-right: 10px !important;
+    }
+
+    .navbar-brand div div:first-child {
+        font-size: 1.05rem !important;
+    }
+
+    .navbar-brand div div:last-child {
+        font-size: 0.78rem !important;
+    }
+
+    .navbar-collapse {
+        padding-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.55rem 0 !important;
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-item.ms-2 {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+    }
+
+    .lang-toggle {
+        width: max-content;
+    }
+
+    .hero {
+        height: 52vh;
+        min-height: 360px;
+        max-height: 460px;
+    }
+
+    .slides img {
+        height: 52vh;
+        min-height: 360px;
+        max-height: 460px;
+        object-position: center;
+    }
+
+    .hero .display-4 {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+        line-height: 1.12;
+    }
+
+    .hero .lead {
+        max-width: 28rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.05rem;
+    }
+
+    .hero .btn-lg,
+    .cta-section .btn-lg {
+        width: 100%;
+        max-width: 22rem;
+        padding: 0.8rem 1rem;
+        white-space: normal;
+    }
+
+    .page-banner {
+        padding-top: 2.25rem !important;
+        padding-bottom: 2.25rem !important;
+    }
+
+    .page-banner .display-4 {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        line-height: 1.15;
+    }
+
+    .page-banner .lead {
+        font-size: 1.05rem;
+    }
+
     .jumbotron h1 {
         font-size: 2.5rem;
     }
     
     .section-padding {
-        padding: 60px 0;
+        padding: 42px 0;
+    }
+
+    .container.py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .row.gx-5,
+    .row.align-items-center.gx-5 {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .text-justify {
+        text-align: left;
+    }
+
+    .container.py-5 .col-md-6:first-child,
+    .section-padding .col-md-7,
+    .section-padding .col-md-6:first-child {
+        margin-bottom: 1.5rem;
+    }
+
+    .container.py-5 img,
+    .section-padding img.img-fluid {
+        width: 100%;
+        max-height: 360px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .card {
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08) !important;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .service-image {
+        height: 170px;
+    }
+
+    .cta-section {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .cta-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .cta-section .btn + .btn {
+        margin-top: 0.75rem;
+    }
+
+    .cta-section .btn.me-3 {
+        margin-right: 0 !important;
+    }
+
+    .contact-info p {
+        overflow-wrap: anywhere;
+    }
+
+    .map-container {
+        margin-top: 1.5rem;
+    }
+
+    .map-container iframe {
+        height: 260px;
+    }
+
+    .footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .footer p {
+        margin-bottom: 0;
+        font-size: 0.92rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        height: 46vh;
+        min-height: 340px;
+        max-height: 420px;
+    }
+
+    .slides img {
+        height: 46vh;
+        min-height: 340px;
+        max-height: 420px;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .service-image {
+        height: 155px;
+    }
+
+    .card-body {
+        padding: 1.1rem;
+    }
+
+    .testimonial-card .card-body {
+        padding: 1.5rem 1.15rem;
+    }
+
+    .btn {
+        white-space: normal;
+    }
+
+    .contact-info + .mt-4 .btn {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
     }
 }
